@@ -1,7 +1,17 @@
-function JobCard() {
+function JobCard({
+  logo,
+  company,
+  isNew,
+  isFeatured,
+  position,
+  postedAt,
+  contract,
+  location,
+  languages,
+}) {
   return (
     <div
-      className="py-2 px-3 bg-light text-dark
+      className="my-5 py-2 px-3 bg-light text-dark
         d-flex flex-column
         border-5 border-primary border-start
         border-top-0 border-end-0 border-bottom-0 rounded
@@ -9,8 +19,8 @@ function JobCard() {
     >
       <img
         className="w-25 position-relative top-0 start-0 translate-middle-y"
-        src={"./src/assets/images/eyecam-co.svg"}
-        alt={""}
+        src={logo}
+        alt={logo}
       />
       <header
         className="m-0 p-0 pb-1 bg-transparent
@@ -23,44 +33,48 @@ function JobCard() {
           className="me-3 fs-5
             header_enterprise"
         >
-          Photosnap
+          {company}
         </span>
 
         <span
-          className="py-2 px-3 mx-1 bg-primary 
+          className={`py-2 px-3 mx-1 bg-primary 
             text-light text-uppercase fs-6 fw-bold
             rounded-pill
-            header_tag-new"
+            ${isNew ? 'visible' : 'invisible' }
+            header_tag-new`}
         >
           new!
         </span>
         <span
-          className="p-2 px-3 mx-1 bg-dark
+          className={`p-2 px-3 mx-1 bg-dark
             text-light text-uppercase fs-6 fw-bold
             rounded-pill
-            header_tag-new"
+            ${isFeatured ? 'visible' : 'invisible' }
+            header_tag-new`}
         >
           featured
         </span>
       </header>
       <section className="JobCard_body">
-        <span className="py-2 fw-bold body_role">
-          Senior Frontend Developer
-        </span>
+        <span className="py-2 fw-bold body_role">{position}</span>
 
         <p className="mb-0 py-2 fw-bold text-black-50 body_data">
-          1d ago • Full Time • USA only
+          {`${postedAt} • ${contract} • ${location}`}
         </p>
       </section>
       <hr className="mt-2 mb-4 border border-secondary border-1" />
       <footer className="JobCard_footer">
-        <button
-          type="button"
-          className="text-capitalize
-        btn btn-outline-primary btn-sm"
-        >
-          frontend
-        </button>
+        {languages.map((language) => {
+          return (
+            <button
+              type="button"
+              className="mx-2 text-capitalize
+              btn btn-outline-primary btn-sm"
+            >
+              {language}
+            </button>
+          );
+        })}
       </footer>
     </div>
   );
