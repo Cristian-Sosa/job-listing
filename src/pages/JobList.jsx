@@ -1,12 +1,10 @@
 import data from "../../public/data.json";
 import JobCard from "./components/JobCard";
 
-// import './JobList.css';
-
 function JobList() {
   return (
     <section className="mt-5 py-4 px-3 
-    d-flex flex-column flex-md-row flex-wrap justify-content-md-between
+    d-flex flex-column flex-md-row flex-wrap justify-content-md-around
     JobList">
       {data.map((post) => {
         return (
