@@ -1,10 +1,13 @@
-import data from "../../data.json";
+import data from "../../public/data.json";
 import JobCard from "./components/JobCard";
 
+// import './JobList.css';
+
 function JobList() {
-  console.log(data[0].company);
   return (
-    <section className="mt-5 py-4 px-3 d-flex flex-column">
+    <section className="mt-5 py-4 px-3 
+    d-flex flex-column flex-md-row flex-wrap justify-content-md-between
+    JobList">
       {data.map((post) => {
         return (
           <JobCard

@@ -1,3 +1,5 @@
+import './JobCard.css';
+
 function JobCard({
   logo,
   company,
@@ -11,11 +13,11 @@ function JobCard({
 }) {
   return (
     <div
-      className="my-5 py-2 px-3 bg-light text-dark
+      className={`my-5 py-2 px-3 bg-light text-dark
         d-flex flex-column
-        border-5 border-primary border-start
+        ${isFeatured ? 'border-5 border-primary border-start' : 'border-5 border-light border-start'}
         border-top-0 border-end-0 border-bottom-0 rounded
-        JobCard"
+        JobCard`}
     >
       <img
         className="w-25 position-relative top-0 start-0 translate-middle-y"

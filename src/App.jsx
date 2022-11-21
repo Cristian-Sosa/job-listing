@@ -1,4 +1,4 @@
-import JobList from "./assets/pages/JobList";
+import JobList from "./pages/JobList";
 
 function App() {
   return (
