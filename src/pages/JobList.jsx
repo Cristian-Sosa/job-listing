@@ -1,4 +1,4 @@
-import data from "../data.json";
+import data from "../../public/data.json";
 import JobCard from "./components/JobCard";
 
 function JobList() {
