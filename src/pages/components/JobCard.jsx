@@ -65,7 +65,7 @@ function JobCard({
         </p>
       </section>
       <hr className="mt-2 mb-4 border border-secondary border-1" />
-      <footer className="JobCard_footer">
+      <footer className="mb-3 JobCard_footer">
         {languages.map((language) => {
           return (
             <button
